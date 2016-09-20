@@ -29,7 +29,8 @@ Each entry has the following mandatory fields:
 
 
 ### Example
-´´´{  
+```   
+{  
     "box_id": 12345,  
   "sensors": [  
       {  
@@ -57,7 +58,8 @@ Each entry has the following mandatory fields:
                 {"name": "rain", "function_name": "get_rain_since_last_request", "return_values":["rain", "nr_ticks"]}  
             ]  
         }  
-}´´´  
+}   
+´´´  
 
 
 # Advantages
