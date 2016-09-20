@@ -1,0 +1,93 @@
+{
+	"box_id": 12345,
+    "sensors": [
+        {
+            "name": "bme280",
+            "enabled": "True",
+            "description": "I2C: temp, pressure, alt, humid",
+            "input": 0,
+            "file_name": "bme280",
+            "module_name": "BME280Reader",
+            "properties":[
+                {"name": "temperature",  "function_name": "get_temperature"},
+                {"name": "air_pressure", "function_name": "get_pressure"},
+                {"name": "altitude",     "function_name": "get_altitude"},
+                {"name": "humidity",     "function_name": "get_humidity"}
+            ]
+        },
+
+        {
+            "name": "upmSi114x",
+            "enabled": "True",
+            "description": "I2C uv",
+            "input": 1,
+            "file_name": "uv",
+            "module_name": "UVReader",
+            "properties":[
+                {"name": "uv_index", "function_name": "get_uv_index"}
+            ]
+        },
+
+        {
+            "name": "rain",
+            "enabled": "True",
+            "description": "interrupt rain",
+            "input": 6,
+            "file_name": "rain",
+            "module_name": "RainReader",
+            "properties":[
+                {"name": "rain", "function_name": "get_rain_since_last_request", "return_values":["rain", "nr_ticks"]}
+            ]
+        },
+
+        {
+            "name": "wind_speed",
+            "enabled": "True",
+            "description": "interrupt wind speed",
+            "input": 5,
+            "file_name": "wind_speed",
+            "module_name": "WindSpeedReader",
+            "properties":[
+                {"name": "wind_speed", "function_name": "get_wind_speed_since_last_request", "return_values":["wind_speed", "nr_ticks"]}
+            ]
+        },
+
+        {
+            "name": "wind_direction",
+            "enabled": "True",
+            "description": "analog wind direction",
+            "input": 0,
+            "file_name": "wind_direction",
+            "module_name": "WindDirectionReader",
+            "properties":[
+                {"name": "wind_direction", "function_name": "get_wind_direction"}
+            ]
+        },
+		
+		{
+            "name": "battery_sensor",
+            "enabled": "True",
+            "description": "battery voltage sensor",
+            "input": 2,
+            "file_name": "battery_sensor",
+            "module_name": "BatteryReader",
+            "properties":[
+                {"name": "battery_values", "function_name": "get_battery_information", "return_values":["voltage", "percent"]}
+            ]
+        },
+		
+        {
+            "name": "air_sensor",
+            "enabled": "True",
+            "note": "always the last on this list, because of the waiting time to heat up",
+            "description": "analog air sensor",
+            "input": 1,
+            "file_name": "air_quality",
+            "module_name": "AirReader",
+            "properties":[
+                {"name": "air_quality", "function_name": "get_air_quality_index", "return_values":["raw", "description"]},
+                {"name": "ppm", "function_name": "get_ppm"}
+            ]
+        }
+    ]
+}

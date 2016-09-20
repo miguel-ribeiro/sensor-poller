@@ -1,0 +1,7 @@
+{
+    "SERVER_URL" : "http://server.com/api/sensor-post",
+    "CHECK_CONNECTION_URL" : "http://server.com/api/",
+    "VERSION" : 1.0,
+    "ENCRYPTION_KEY" : "abcdefghijkmnopkrstubwxyz0123456",
+    "SEND_INTERVAL" : 10
+}
