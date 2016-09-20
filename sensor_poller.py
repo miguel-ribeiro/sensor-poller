@@ -106,6 +106,6 @@ while (1):
     with open(LOG_PATH + '/' + log_filename ,'a') as f:
         f.write(json.dumps(all_sensor_values) + '\n')
     
-    time.sleep(config.)
+    time.sleep(config.send_interval)
     #except:
     #    print "error somewhere"
