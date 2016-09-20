@@ -31,33 +31,33 @@ Each entry has the following mandatory fields:
 ### Example
 ```   
 {  
-  "box_id": 12345,  
-  "sensors": [  
-    {  
-        "name": "bme280",  
-        "enabled": "True",  
-        "description": "I2C: temp, pressure, alt, humid",  
-        "input": 0,  
-        "file_name": "bme280",  
-        "module_name": "BME280Reader",  
-        "properties":[  
-            {"name": "temperature",  "function_name": "get_temperature"},  
-            {"name": "air_pressure", "function_name": "get_pressure"},  
-            {"name": "altitude",     "function_name": "get_altitude"},  
-            {"name": "humidity",     "function_name": "get_humidity"}  
-        ]  
-    },  
-    {  
-        "name": "rain",  
-        "enabled": "True",  
-        "description": "interrupt rain",  
-        "input": 6,  
-        "file_name": "rain",  
-        "module_name": "RainReader",  
-        "properties":[  
-            {"name": "rain", "function_name": "get_rain_since_last_request", "return_values":["rain", "nr_ticks"]}  
-        ]  
-    }  
+    "box_id": 12345,  
+    "sensors": [  
+      {  
+          "name": "bme280",  
+          "enabled": "True",  
+          "description": "I2C: temp, pressure, alt, humid",  
+          "input": 0,  
+          "file_name": "bme280",  
+          "module_name": "BME280Reader",  
+          "properties":[  
+              {"name": "temperature",  "function_name": "get_temperature"},  
+              {"name": "air_pressure", "function_name": "get_pressure"},  
+              {"name": "altitude",     "function_name": "get_altitude"},  
+              {"name": "humidity",     "function_name": "get_humidity"}  
+          ]  
+      },  
+      {  
+          "name": "rain",  
+          "enabled": "True",  
+          "description": "interrupt rain",  
+          "input": 6,  
+          "file_name": "rain",  
+          "module_name": "RainReader",  
+          "properties":[  
+              {"name": "rain", "function_name": "get_rain_since_last_request", "return_values":["rain", "nr_ticks"]}  
+          ]  
+      }  
 }   
 ```
 
