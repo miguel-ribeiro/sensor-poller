@@ -1,5 +1,5 @@
 # Sensor-poller
-Dynamic sensor gatherer written in Python 2.6 for IoT
+Dynamic sensor gatherer written in Python 2.7.6 for IoT
 
 This projetct allows for dynamic reading of sensors provided the class file to read them, and stores the results in an output file. It is aimed for many prototypes of the same project that can have different sensors attached.
 
