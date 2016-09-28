@@ -1,4 +1,3 @@
-import atexit
 import datetime
 import importlib
 import json
@@ -20,17 +19,16 @@ LOG_PATH                = 'logs'
 
 # ----------------------------- Exit handlers --------------------------------
 # This function stops python from printing a stacktrace when you hit control-C
-def SIGINTHandler(signum, frame):
-    raise SystemExit
-
-# This function lets you run code on exit
-def exitHandler():
-    print "Exiting"
+def z_handler(signum, frame):
+    print 'Ctrl+Z pressed, exiting'
     sys.exit(0)
 
-# Register exit handlers
-atexit.register(exitHandler)
-signal.signal(signal.SIGINT, SIGINTHandler)
+def c_handler(signum, frame):
+    print 'Ctrl+C pressed, exiting'
+    sys.exit(0)
+
+signal.signal(signal.SIGTSTP, z_handler)
+signal.signal(signal.SIGINT, c_handler)
 
 # ----------------------------------------------------------
 def callMethod(o, name):
@@ -73,10 +71,6 @@ def get_all_sensor_values(sensors):
                 print "error reading " + sensor_property['name']
     return return_values
 
-
-
-
-
 #################################################
 ######--------------  MAIN  -------------- ######
 ################################################# 
@@ -106,6 +100,6 @@ while (1):
     with open(LOG_PATH + '/' + log_filename ,'a') as f:
         f.write(json.dumps(all_sensor_values) + '\n')
     
-    time.sleep(config.send_interval)
+    time.sleep(120)
     #except:
     #    print "error somewhere"
