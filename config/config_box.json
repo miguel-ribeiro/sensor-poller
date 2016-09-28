@@ -1,5 +1,5 @@
 {
-	"box_id": 12345,
+    "box_id": 12345,
     "sensors": [
         {
             "name": "bme280",
