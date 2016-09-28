@@ -64,7 +64,7 @@ Each entry has the following mandatory fields:
 
 # Advantages
 *  This allows to read multiple sensors in a single script, which is dinamycally fed by the contents of the config file.
-*  Updates to the modules can be made without having to modify the keys, names or import files of the reading script.
+*  Updates to the modules can be made without having to modify the keys, names or import names of the reading script.
 
 ----------
 Tested on IntelEdison for Iot
